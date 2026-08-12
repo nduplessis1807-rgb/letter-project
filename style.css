@@ -1,0 +1,1139 @@
+/* =========================================================
+   COLOUR PALETTE
+========================================================= */
+
+:root {
+    --background: #EAF2EA;
+
+    --paper: #FFFDF7;
+    --paper-dark: #F3EBDD;
+
+    --sage: #BFD3B8;
+    --sage-dark: #91AA88;
+
+    --text: #4A433C;
+
+    --shadow: rgba(70, 65, 55, 0.14);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+
+    background-color: var(--background);
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.35) 0px,
+            rgba(255,255,255,0.35) 35px,
+            rgba(214,230,217,0.35) 35px,
+            rgba(214,230,217,0.35) 70px
+        );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+========================================================= */
+
+.container {
+    width: min(850px, 90%);
+
+    box-sizing: border-box;
+
+    padding: 55px;
+
+    background-color: var(--paper);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PAPER TEXTURE
+========================================================= */
+
+.container,
+.envelope-body,
+.letter-paper,
+.actual-letter {
+    background-image:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(150,130,100,0.055) 0px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle at 70% 60%,
+            rgba(150,130,100,0.045) 0px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle at 40% 80%,
+            rgba(150,130,100,0.04) 0px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            rgba(255,255,255,0.25),
+            rgba(245,238,222,0.12)
+        );
+
+    background-size:
+        13px 13px,
+        17px 17px,
+        19px 19px,
+        100% 100%;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.site-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 64px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    color: var(--text);
+
+    line-height: 1;
+
+    margin: 0 0 15px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   WELCOME SCREEN
+========================================================= */
+
+#welcomeScreen {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hero {
+    width: min(850px, 95%);
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+}
+
+
+.hero-card {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.hero-card > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CORNER DECORATIONS
+========================================================= */
+
+.corner-decoration {
+    position: absolute;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    color: #AEBFA3;
+
+    line-height: 1;
+
+    opacity: 0.85;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.top-left {
+    top: 28px;
+    left: 30px;
+
+    transform: rotate(-20deg);
+}
+
+
+.top-right {
+    top: 28px;
+    right: 30px;
+
+    transform: scaleX(-1) rotate(-20deg);
+}
+
+
+.bottom-left {
+    bottom: 28px;
+    left: 30px;
+
+    transform: scaleY(-1) rotate(-20deg);
+}
+
+
+.bottom-right {
+    bottom: 28px;
+    right: 30px;
+
+    transform: scale(-1, -1) rotate(-20deg);
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: var(--sage-dark);
+
+    margin: 0 0 35px;
+
+    padding: 0;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+#envelope {
+    position: relative;
+
+    width: 300px;
+    height: 195px;
+
+    margin: 25px auto 35px;
+
+    cursor: pointer;
+
+    perspective: 800px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+#envelope:hover {
+    transform: translateY(-5px) scale(1.025);
+}
+
+
+/* =========================================================
+   ENVELOPE BODY
+========================================================= */
+
+.envelope-body {
+    position: absolute;
+
+    inset: 0;
+
+    background-color: #F8F0E1;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 18px rgba(70,65,55,0.13);
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+
+/* Envelope side folds */
+
+.envelope-body::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background: #F4E9D7;
+
+    clip-path: polygon(
+        0 0,
+        100% 50%,
+        0 100%
+    );
+
+    opacity: 0.85;
+}
+
+
+.envelope-body::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background: #F4E9D7;
+
+    clip-path: polygon(
+        100% 0,
+        0 50%,
+        100% 100%
+    );
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   ENVELOPE FLAP
+========================================================= */
+
+.flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 105px;
+
+    background-color: #EEE3D1;
+
+    clip-path: polygon(
+        0 0,
+        50% 100%,
+        100% 0
+    );
+
+    z-index: 3;
+
+    transform-origin: top center;
+
+    transition:
+        transform 0.7s ease;
+
+    filter:
+        drop-shadow(
+            0 2px 2px rgba(80,70,60,0.08)
+        );
+}
+
+
+/* Rounded-looking top edge */
+
+.flap::before {
+    content: "";
+
+    position: absolute;
+
+    top: -2px;
+    left: 0;
+
+    width: 100%;
+    height: 12px;
+
+    background: #EEE3D1;
+
+    border-radius: 15px 15px 0 0;
+}
+
+
+/* =========================================================
+   LETTER INSIDE ENVELOPE
+========================================================= */
+
+.letter-paper {
+    position: absolute;
+
+    width: 215px;
+    height: 135px;
+
+    left: 50%;
+    bottom: 8px;
+
+    transform: translateX(-50%);
+
+    background-color: var(--paper);
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 5px 14px rgba(70,65,55,0.12);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: var(--text);
+
+    z-index: 1;
+
+    opacity: 0;
+
+    transition:
+        bottom 0.7s ease,
+        opacity 0.35s ease;
+}
+
+
+#envelope.open .letter-paper {
+    bottom: 105px;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   WAX SEAL
+========================================================= */
+
+.wax-seal {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 43px;
+    height: 43px;
+
+    background-color: #FBF7ED;
+
+    border: 2px solid #E3D9C7;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 3px 7px rgba(60,55,45,0.14),
+        inset 0 0 0 2px rgba(255,255,255,0.8);
+
+    z-index: 4;
+}
+
+
+.seal-icon {
+    font-size: 15px;
+
+    color: #A98F65;
+}
+
+
+/* =========================================================
+   ENVELOPE OPENING
+========================================================= */
+
+#envelope.open .flap {
+    transform: rotateX(180deg);
+}
+
+
+/* =========================================================
+   CLICK ENVELOPE INSTRUCTION
+========================================================= */
+
+.instruction {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: var(--sage-dark);
+
+    background: transparent;
+
+    padding: 0;
+}
+
+
+/* Optional curls */
+
+.curl {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    color: #B8CBAF;
+
+    display: inline-block;
+}
+
+
+.curl-left {
+    transform: scaleX(-1);
+}
+
+
+.curl-right {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   COLLECTION SCREEN
+========================================================= */
+
+#letterScreen {
+    display: none;
+
+    width: min(750px, 90%);
+
+    min-height: 600px;
+
+    padding: 55px;
+
+    box-sizing: border-box;
+
+    background-color: var(--paper);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px var(--shadow);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Inner sage frame */
+
+#letterScreen::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 2px solid var(--sage-dark);
+
+    border-radius: 14px;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Keep collection content above frame */
+
+#letterScreen > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* Collection header */
+
+#letterScreen .letter-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+#letterScreen .site-title {
+    font-size: 52px;
+
+    font-weight: 500;
+
+    margin: 0;
+}
+
+
+/* Collection subtitle */
+
+.collection-subtitle {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: #7B746B;
+
+    background: transparent;
+
+    padding: 0;
+
+    margin: 10px 0;
+}
+
+
+/* Divider */
+
+#letterScreen .little-line {
+    width: 65px;
+
+    height: 2px;
+
+    background-color: var(--sage);
+
+    border-radius: 10px;
+
+    margin: 15px auto;
+}
+
+
+/* =========================================================
+   LETTER COLLECTION
+========================================================= */
+
+#letterList {
+    width: 85%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin: 15px auto 25px;
+}
+
+
+.letter-card {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 18px 25px;
+
+    background-color: #FFFDF9;
+
+    border: 1.5px solid var(--sage);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 10px rgba(80,80,80,0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    font-family: "Cormorant Garamond", serif;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.letter-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 16px rgba(80,80,80,0.10);
+}
+
+
+.card-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    color: var(--text);
+
+    margin-bottom: 4px;
+}
+
+
+.card-date {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    color: #7B746B;
+
+    letter-spacing: 1px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL LETTER SCREEN
+========================================================= */
+
+#singleLetterScreen {
+    display: none;
+
+    width: min(850px, 90%);
+
+    min-height: 650px;
+
+    padding: 55px;
+
+    box-sizing: border-box;
+
+    background-color: var(--paper);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px var(--shadow);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Inner frame */
+
+#singleLetterScreen::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 2px solid var(--sage-dark);
+
+    border-radius: 15px;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Keep content above frame */
+
+#singleLetterScreen > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LETTER HEADER
+========================================================= */
+
+.letter-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+.letter-date {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    color: #7B746B;
+
+    letter-spacing: 1px;
+}
+
+
+.letter-header h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 500;
+
+    color: var(--text);
+
+    font-size: 58px;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+    padding: 10px;
+
+    margin: 0 0 15px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   LETTER DIVIDER
+========================================================= */
+
+.little-line {
+    width: 100px;
+
+    height: 2px;
+
+    margin: 18px auto 30px;
+
+    background-color: var(--sage);
+
+    position: relative;
+}
+
+
+.little-line::after {
+    content: "❧";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background-color: var(--paper);
+
+    padding: 0 8px;
+
+    color: var(--sage-dark);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   ACTUAL LETTER
+========================================================= */
+
+.actual-letter {
+    width: 92%;
+
+    min-height: 280px;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background-color: #FFFDF8;
+
+    position: relative;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 18px rgba(70,65,55,0.08);
+}
+
+
+/* =========================================================
+   SCALLOPED BORDER
+========================================================= */
+
+.actual-letter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius: 18px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            var(--sage-dark) 0 4px,
+            transparent 4.5px
+        )
+        top center / 18px 9px repeat-x,
+
+        radial-gradient(
+            circle,
+            var(--sage-dark) 0 4px,
+            transparent 4.5px
+        )
+        bottom center / 18px 9px repeat-x,
+
+        radial-gradient(
+            circle,
+            var(--sage-dark) 0 4px,
+            transparent 4.5px
+        )
+        left center / 9px 18px repeat-y,
+
+        radial-gradient(
+            circle,
+            var(--sage-dark) 0 4px,
+            transparent 4.5px
+        )
+        right center / 9px 18px repeat-y;
+
+    z-index: 1;
+}
+
+
+/* Cream interior */
+
+.actual-letter::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    background: #FFFDF8;
+
+    border-radius: 13px;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LETTER TEXT
+========================================================= */
+
+.actual-letter p {
+    position: relative;
+
+    z-index: 2;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    line-height: 1.7;
+
+    color: var(--text);
+
+    text-align: left;
+
+    background: transparent;
+
+    padding: 0;
+
+    margin: 0 0 20px;
+}
+
+
+.actual-letter .signature {
+    text-align: right;
+
+    margin-top: 40px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+#backToLetters {
+    margin-top: 28px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: var(--sage);
+
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 8px rgba(70,65,55,0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#backToLetters:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 12px rgba(70,65,55,0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        align-items: flex-start;
+
+        padding: 20px 0;
+    }
+
+
+    .container {
+        width: 94%;
+
+        padding: 35px 20px;
+    }
+
+
+    .hero {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+
+    .site-title {
+        font-size: 50px;
+    }
+
+
+    #envelope {
+        width: 270px;
+
+        transform: scale(0.9);
+    }
+
+
+    #envelope:hover {
+        transform: scale(0.92);
+    }
+
+
+    #letterScreen,
+    #singleLetterScreen {
+        width: 94%;
+
+        min-height: 600px;
+
+        padding: 40px 20px;
+    }
+
+
+    .letter-header h1 {
+        font-size: 48px;
+    }
+
+
+    .actual-letter {
+        width: 95%;
+
+        padding: 30px 25px;
+    }
+
+
+    .actual-letter p {
+        font-size: 20px;
+    }
+
+
+    #letterList {
+        width: 95%;
+    }
+
+
+    .corner-decoration {
+        font-size: 32px;
+    }
+}

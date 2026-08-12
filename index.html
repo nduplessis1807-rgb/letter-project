@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Letter Project</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <!-- =========================
+             WELCOME SCREEN
+        ========================== -->
+
+        <section id="welcomeScreen">
+
+            <div class="hero">
+
+                <div class="hero-card container">
+
+                    <!-- Corner decorations -->
+                    <div class="corner-decoration top-left">❧</div>
+                    <div class="corner-decoration top-right">❧</div>
+                    <div class="corner-decoration bottom-left">❧</div>
+                    <div class="corner-decoration bottom-right">❧</div>
+
+                    <h1 class="site-title">
+                        CAIXA DE CORREIO 
+                    </h1>
+
+                    <p class="subtitle">
+                        Ao meu amor
+                    </p>
+
+                    <!-- Envelope -->
+                    <div id="envelope">
+
+                        <div class="flap"></div>
+
+                        <div class="envelope-body"></div>
+
+                        <div class="letter-paper"></div>
+
+                        <div class="wax-seal">
+                            <span class="seal-icon">⚜</span>
+                        </div>
+
+                    </div>
+
+                    <div class="instruction">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LETTER COLLECTION SCREEN
+        ========================== -->
+
+        <section class="container" id="letterScreen">
+
+            <div class="letter-header">
+
+                <h1 class="site-title">
+                    Cartas
+                </h1>
+
+                <div class="little-line"></div>
+
+                <p class="collection-subtitle">
+                    A little collection of letters
+                </p>
+
+            </div>
+
+            <!-- JavaScript will put the letter cards here -->
+            <div id="letterList"></div>
+
+        </section>
+
+
+        <!-- =========================
+             INDIVIDUAL LETTER SCREEN
+        ========================== -->
+
+        <section class="container" id="singleLetterScreen">
+
+            <div class="letter-header">
+
+                <span class="letter-date" id="letterDate"></span>
+
+                <h1 id="letterTitle"></h1>
+
+                <div class="little-line"></div>
+
+            </div>
+
+            <div class="actual-letter" id="letterContent">
+                <!-- Letter text will be added by JavaScript -->
+            </div>
+
+            <button id="backToLetters">
+                ← Back to letters
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
